@@ -1,0 +1,328 @@
+
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Raleway-Light.eot) format('embedded-opentype');
+
+  src: local('Raleway'), url(../fonts/Raleway-Light.woff2) format('woff2'),
+  local('Raleway'), url(../fonts/Raleway-Light.woff) format('woff'),
+  local('Raleway'), url(../fonts/Raleway-Light.svg) format('svg'),
+  local('Raleway'), url(../fonts/Raleway-Light.ttf) format('truetype');
+  /*unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;*/
+
+}
+
+/*@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato.eot) format ('embedded-opentype');
+
+  src: local('Lato'), url(../fonts/Lato.woff2) format ('woff2'),
+  local('Lato'), url(../fonts/Lato.ttf) format ('truetype'),
+  local('Lato'), url(../fonts/Lato.woff) format ('woff'),
+  local('Lato'), url(../fonts/Lato.svg) format ('svg');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Josefin-Sans.eot) format ('embedded-opentype');
+  src: local('Josefin Sans'), url(../fonts/Josefin-Sans.ttf) format ('truetype'),
+  local('Josefin Sans'), url(../fonts/Josefin-Sans.woff) format ('woff'),
+  local('Josefin Sans'), url(../fonts/Josefin-Sans.woff2) format ('woff2'),
+  local('Josefin Sans'), url(../fonts/Josefin-Sans.svg) format ('svg');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}*/
+
+.graphic {
+  margin: 0 0 0 0;
+  padding: 0;
+  height: 18px;
+  width: 100vw;
+  opacity: .85;
+}
+
+.color-collection canvas,
+.color-collection img {
+  /*position: relative;*/
+  top: 0;
+}
+
+#map {
+  position: absolute;
+  display: inline-block;
+  float: left;
+  width: 65%;
+  min-width: 50rem;
+  z-index: 3;
+
+/*  transform: translate3d(0, 0, -300px);
+  -webkit-transform: translate3d(0, 0, -300px);*/
+
+}
+
+#map img {
+  width: 80%;
+  margin-top: 15%;
+  margin-left: 10%;
+  display: inline-block;
+}
+
+#quote {
+  position: absolute;
+  left: 30%;
+  top: 55%;
+  width: 45rem;
+  z-index: 2;
+  font-family: Lato;
+  font-size: 1.5rem;
+  color: #859398;
+  z-index: 3;
+}
+
+#mask {
+  position: absolute;
+  height: 68rem;
+  width: 45rem;
+  top: 0;
+  right: 13.3rem;
+  z-index: 2;
+}
+
+#section {
+  position: absolute;
+  width: 45rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#profile {
+  position: absolute;
+  top: 11.5rem;
+  right: 8.5rem;
+  width: 27rem;
+  border: .3rem solid #222; /*#222; f5f5f5*/
+  z-index: 1;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+#skills {
+  position: relative;
+  width: 100vw;
+  min-width: 50rem;
+  height: 22rem;
+  bottom: 0;
+  margin: auto auto;
+  padding-top: 4rem;
+
+  /*background: -webkit-linear-gradient(90deg, #133649 1%, #859398 99%);*/
+  background: #859398; /* #222;*/
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+#skills h2 {
+  margin: auto auto;
+  padding-bottom: 1rem;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5rem;
+}
+
+.column-container {
+  margin: auto auto;
+  padding-right: 3rem;
+}
+
+.third {
+  display: inline-block;
+  margin: auto auto;
+  width: 23%;
+  padding-left: 10%;
+  vertical-align: top;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  line-height: 130%;
+  color: whitesmoke;
+
+}
+
+.projs-container {
+  top: 4rem;
+  width: 1150px;
+  margin: auto auto;
+  position: relative;
+}
+
+.padding { 
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: inline-block;
+}
+
+.proj {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  /*opacity: 0;*/
+  display: inline-block;
+  border: white 10px solid;
+  box-shadow: 0 1px 2px #cccccc;
+  background-color: transparent;
+  -webkit-transition: background-color .5s;
+  -moz-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+.overlay {
+  width: 26.5rem;
+  height: 26.5rem;
+  position: absolute;
+  padding: 2rem;
+  opacity: 0;
+  text-align: center;
+/*  background-image: url('../img/icon_white.svg');
+  background-size: 8rem 8rem;
+  background-repeat: no-repeat;
+  background-position: center;*/
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+
+  -webkit-transition: opacity .3s;
+  -safari-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+
+  transform: translateZ(0px);
+  -webkit-transform: translateZ(0px);
+}
+
+.proj a img {
+  /*width: 30rem;*/
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+.projs-container .head {
+  width: 1100px;
+  margin: auto auto 7rem auto;
+  border-bottom: 1px solid #dddddd;
+}
+
+.head img {
+  display: block;
+  width: 10rem;
+  margin: auto auto;
+}
+
+.filmstrip {
+  width: 100%;
+  height: 18rem;
+  bottom: 4rem;
+  margin: auto auto;
+  background-color: #222;/*#859398;*/
+}
+
+.container {
+  position: absolute;
+  width: 80%;
+  min-width: 50rem;
+
+  /*width: 90rem;*/
+
+  margin-left: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  display: inline-block;
+}
+
+.container img {
+  width: 20rem;
+  min-width: 200px;
+  margin: 1rem 1rem;
+  /*border: #9bcfd0 10px solid;*/
+}
+
+.contact {
+  position: absolute;
+  left: 77%;
+/*  right: 80px;*/
+
+  float
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 21rem;
+  font-family: "Josefin Sans";
+  font-size: 2.5rem;
+  line-height: 130%;
+  color: #859398;
+}
+
+.contact-icons img {
+  position: relative;
+  margin: 5px 5px auto 5px;
+  width: 3rem;
+  height: 3rem;
+  opacity: .6;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+}
+
+.contact-icons img:hover {
+    opacity: 1;
+}
+
+#icon {
+  position: absolute;
+  right: 30px;
+  width: 150px;
+  margin-top: 1.5rem;
+  opacity: .1;
+}
+
+.copyright {
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  bottom: 0;
+  padding-top: 1rem;
+  font-family: Lato;
+  font-size: 1.3rem;
+  color: gray;
+  text-align: center;
+  background-color: #222;
+  border-top: 1px solid gray;
+  z-index: 2;
+}
+
+@media (min-width: 1000px) {
+
+}
