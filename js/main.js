@@ -272,7 +272,6 @@ function createImgGraphic() {
 
 window.onload = function() {
   addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent);
-  document.getElementsByTagName("body")[0].classList.remove("preload");
   renderPattern();
   createImgGraphic();
 
