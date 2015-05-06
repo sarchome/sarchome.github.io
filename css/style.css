@@ -21,6 +21,13 @@ ul {
   list-style-type: none;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 #main {
   width: 100%;
   height: 100vh;
