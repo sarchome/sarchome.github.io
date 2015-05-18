@@ -26,62 +26,71 @@
     <meta name="author" content="sarahcho" />
     <meta name="keywords" content="sarah cho web dev" />
 
+    <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
     <link rel="stylesheet" href="css/mobile.css" type="text/css" media='only screen and (max-device-width: 480px)' />
     <script type="text/javascript" src="js/vendor/d3-3.3.13.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery-2.1.3.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Lato|Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100|Roboto' rel='stylesheet' type='text/css'>
 
   </head>
 
   <body>
 
-    <div id="nav">
-    </div>
-
     <div id="main">
-      <div class="pattern pattern-01"></div>
+      <div id="pattern" class="pattern anim"></div>
         <div id="title">
-          <div class="fade1">
+          <div id="fade01" class="fade01 anim">
             <img src="img/title_01.svg" alt="Sarah Cho"/>
           </div>
-          <div class="fade2">
+          <div id="fade02" class="fade02 anim">
             <img src="img/title_02.svg" alt="front-end web developer"/>
           </div>
-          <div class="fade3">
+          <div id="fade03" class="fade03 anim">
             <a target="_blank" href="mailto:sarcho@gmail.com"><img src="img/title_03.svg" alt="sarcho at gmail dot com"/></a>
           </div>
           <div id="btn">
-            <a href="#projs"><img src="img/scroll-icon.svg" alt="scroll down"/></a>
+            <a href="#projs"><img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/></a>
           </div>
         </div>
     </div>
 
-    <div id="projs">
+    <div id="modal-bg">
+      <div>
+        <div id="minimize">X
+        </div>
+        <div class="modal">
+        </div>
+      </div>
+    </div>
 
+    <div id="projs">
       <div class="projs-container">
         <div class="head">
           <img src="img/header-01.svg"/>
         </div>
         <div class="padding">
-          <div class="proj">
-            <a href="http://chompychomp.herokuapp.com"><img src="img/chompy_sq.png"/>
+          <div class="proj" data-objective="An app that display a user's Instagram feed" data-process="Transitions and parallax effects using CSS.  Built with CSS3, Ruby on Rails, Javascript, and deployed on Heroku. Uses the Instagram api and Oauth2 authentication." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
+            <a javascript:void(0);>
+              <img src="img/chompy_sq.png"/>
               <div class="overlay">
-                <br>
-                <br>
+                <br><br>
+                CHOMPY
+                <br><br>
                 {css3 javascript rails}
               </div>
             <div class="white-border"></div>
-            </a>
+            <!-- </a> -->
           </div>
         </div>
         <div class="padding">
-          <div class="proj">
-            <a href="http://qurlapp.herokuapp.com"><img src="img/qurl_sq.png"/>
+          <div class="proj" data-objective="Informational-gathering video-sharing web app where users can ask questions and post videos answers." data-process="Video capture takes place in the browser without additional plugins.  Separate audio and video files are combined and converted to a lightweight webm format and saved to Amazon Web Services.  Data is stored in a Postgres database. Built with Ruby on Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed to Heroku" data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
+            <a javascript:void(0);>
+              <img src="img/qurl_sq.png"/>
               <div class="overlay">
+                <br>
+                QURL
                 <br>
                 <br>
                 {rails postgres javascript bootstrap webRTC}
@@ -91,9 +100,12 @@
           </div>
         </div>
         <div class="padding">
-          <div class="proj">
-            <a href=""><img src="img/proj3_sq.png"/>
+          <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="The main challenge was using a document database and creating many-to-many relationships.  Built with Ruby on Rails and MongoDB." data-details="Solo project completed in two weeks." data-link="">
+            <a javascript:void(0);>
+              <img src="img/proj3_sq.png"/>
               <div class="overlay">
+                <br>
+                RESTO
                 <br>
                 <br>
                 {rails mongo javascript bootstrap}
@@ -146,27 +158,6 @@
     <div id="bio">
 
       <div>
-        <div id="map">
-          <img src="img/map_world_dots.png"/>
-        </div>
-        <div id="quote">
-"My needle is slow to settle...but it always settles between west and south-south-west.
-
-The future lies that way...and the earth seems more unexhausted and richer on that side."<br><br>
-        </div>
-        <img id="mask" src="img/mask.svg"/>
-        <img id="section" src="img/section.svg"/>
-        <img id="profile" src="img/profile.png"/>
-
-      </div>
-      <!-- <div class="pattern pattern-02"></div> -->
-      <div class="bottom filmstrip">
-        <div class="container">
-        <img src="img/filmstrip01.png"/>
-        <img src="img/filmstrip02.png"/>
-        <img src="img/filmstrip03.png"/>
-        <img src="img/filmstrip04.png"/>
-        </div>
         <div class="contact">
           Sarah Cho<br>
           (310)869-6516<br>
@@ -176,10 +167,13 @@ The future lies that way...and the earth seems more unexhausted and richer on th
             <a href="https://github.com/sarchome"><img src="img/icon_github.svg" alt="github link"/></a>
           </div>
         </div>
-        <!-- <img src="img/icon_white.svg"/ id="icon"/> -->
+        <img id="mask" src="img/mask.svg"/>
+        <img id="section" src="img/section.svg"/>
+        <img id="profile" src="img/profile.png"/>
+
       </div>
       <div class="copyright">
-        Copyright © 2015 Sarah Cho
+        © 2015 Sarah Cho
       </div>
     </div>
 

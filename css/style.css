@@ -21,13 +21,6 @@ ul {
   list-style-type: none;
 }
 
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
-
 #main {
   width: 100%;
   height: 100vh;
@@ -46,8 +39,16 @@ ul {
   min-height: 84rem;
   position: relative;
   background-color: #f2f2f2;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   overflow-y: hidden;
+}
+
+#test {
+  width: 100%;
+  height: 100vh;
+  min-height: 84rem;
+  position: absolute;
+  background-color: #f2f2f2;
 }
 
 #bio {
@@ -57,9 +58,10 @@ ul {
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-color: whitesmoke;
 }
 
-.pattern-01 {
+#pattern {
   position: absolute;
   left:0;
   right:0;
@@ -69,37 +71,19 @@ ul {
   z-index: 0;
 }
 
-.pattern-02 {
-  position: absolute;
-  top: 8.5rem;
-  right: -5rem;
-  /*margin: auto auto;*/
-  width: 40rem;
-  height: 30rem;
-  z-index: 0;
-}
-
-.pattern-01 {
+.pattern {
   animation: pulse 4s 9s ease-in infinite;
   -webkit-animation: pulse 4s 9s ease-in infinite;
 }
 
-.indiv-01 {
+.indiv {
   opacity: .1;
   width: 11rem;
   height: 11rem;
   float: left;
   margin: 0;
-  animation: startingTrans 5.5s forwards, pulse 1.5s ease-in;
-  -webkit-animation: startingTrans 5.5s forwards, pulse 1.5s ease-in;
-}
-
-.indiv-02 {
-  opacity: .15;
-  width: 5rem;
-  height: 5rem;
-  float: left;
-  margin: 0;
+  animation: startingTrans 6s forwards, pulse 1.5s ease-in;
+  -webkit-animation: startingTrans 6s forwards, pulse 1.5s ease-in;
 }
 
 #title {
@@ -109,41 +93,50 @@ ul {
   width: 100vw;
 }
 
-.fade1 {
+#fade01 {
   margin: 34rem auto auto auto;
   width: 40rem;
   opacity: 0;
   z-index: 2;
-  animation: titleFade 1.2s 4.1s 1 forwards;
-  -webkit-animation: titleFade 1.2s 4.1s 1 forwards;
 }
 
-.fade2 {
+.fade01 {
+  animation: titleFade 1.2s 4.2s 1 forwards;
+  -webkit-animation: titleFade 1.2s 4.2s 1 forwards;
+}
+
+#fade02 {
   margin: auto;
   width: 30rem;
   opacity: 0;
   z-index: 2;
+}
+
+.fade02 {
   animation: titleFade 1.3s 5.4s 1 forwards;
   -webkit-animation: titleFade 1.3s 5.4s 1 forwards;
 }
 
-.fade3 {
+#fade03 {
   margin: 4rem auto auto auto;
   width: 17rem;
   opacity: 0;
   z-index: 2;
+}
+
+.fade03 {
   animation: titleFade 1.3s 5.6s 1 forwards;
   -webkit-animation: titleFade 1.3s 5.6s 1 forwards;
 }
 
-.fade3 img {
+.fade03 img {
   opacity: .8;
 }
 
 #btn {
   width: 7rem;
   z-index: 3;
-  margin: 15rem auto auto auto;
+  margin: 13rem auto auto auto;
   opacity: 1;
 }
 
@@ -151,10 +144,12 @@ ul {
   opacity: .8;
 }
 
-#btn img {
+#fade04 {
   position: relative;
-
   opacity: 0;
+}
+
+.fade04 {
   animation: titleFade 2.5s 6.2s 1 forwards;
   -webkit-animation: titleFade 2.5s 6.2s 1 forwards;
 }

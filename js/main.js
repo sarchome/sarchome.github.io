@@ -1,56 +1,79 @@
+document.getElementsByClassName = function(className, context) {
+
+  var getElems;
+
+  if (typeof document.evaluate == 'function') {
+    getElems = function(className, context) {
+      var els = [];
+      var xpath = document.evaluate(
+          ".//*[contains(concat(' ', @class, ' '), ' "
+            + className + " ')]", context, null,
+            XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+      for (var i=0; i<xpath.snapshotLength; i++){
+        els.push(xpath.snapshotItem(i));
+      }
+      return els;
+    }
+  } else {
+    getElems = function(className, content) {
+      var nodeList = context.getElementsByTagName('*');
+      var re = new RegExp('(^|\\s)' + className + '(\\s|$)');
+      return Array.filter(nodeList, function(node) {
+        return node.className.match(re) });
+      }
+    }
+
+  document.getElementsByClassName = function(className, context) {
+    context = context || document;
+    return getElems(className, context);
+  }
+
+  return document.getElementsByClassName(className, context);
+
+}
+
 
 function renderPattern() {
-  var imgNum = 48;
-  // var mainElem = document.getElementById("front-pattern");
 
-  var elems = document.getElementsByClassName("pattern");
+    var imgNum = 48;
+    // var mainElem = document.getElementById("front-pattern");
+    var elem = document.getElementById("pattern");
 
-  for (var x = 0; x < elems.length; x++) {
-    for (var i = 1; i <= imgNum; i++) {
-    var divElem = document.createElement("div");
-    elems[x].appendChild(divElem);
-    divElem.classList
-      .add("indiv"+"-"+0+(x+1));
+    (function() {
 
-    var imgElem = {
-      elem: document.createElement("img"),
-      attrib: document.createAttribute("src"),
-    };
+      for (var i = 1; i <= imgNum; i++) {
+        var divElem = document.createElement("div");
+        elem.appendChild(divElem);
+        divElem.classList
+          .add("indiv");
 
-    if (i.toString().length < 2) {
-      imgElem.attrib.value = "img/pattern/"+ "0" + i.toString() + ".svg";
-    } else {
-      imgElem.attrib.value = "img/pattern/"+ i.toString() + ".svg";
-    };
+        var newImgElem = document.createElement("img");
 
-    imgElem.elem.setAttributeNode(imgElem.attrib)
+        if (i.toString().length < 2) {
+          newImgElem.src = "img/pattern/"+ "0" + i.toString() + ".svg";
+        } else {
+          newImgElem.src = "img/pattern/"+ i.toString() + ".svg";
+        };
 
-    divElem.appendChild(imgElem.elem);
-    divElem.style.animationDelay = (150 + (Math.floor(Math.random() * imgNum) *10)) + 'ms';
-    divElem.style.webkitAnimationDelay = (150 + (Math.floor(Math.random() * imgNum) *10)) + 'ms';
+        divElem.appendChild(newImgElem);
+      }
+
+    })()
+
+
+    var anim = document.getElementsByClassName("anim");
+
+    for (var i=anim.length-1; i>=0; i--) {
+      var idName = anim[i].getAttribute("id");
+      anim[i].classList.add(idName)
     }
-  };
 
-}
+    var imgs = elem.getElementsByClassName("indiv");
 
-function addOverlayEvent(e) {
-  e.target.style.opacity = 1;
-  e.target.addEventListener("mouseout", removeOverlayEvent);
-  e.target.parentNode.childNodes[0].style.opacity = .4;
-  e.target.parentNode.parentNode.style.backgroundColor = "#859398";
-}
-
-function removeOverlayEvent(e) {
-  e.target.style.opacity = 0;
-  e.target.parentNode.childNodes[0].style.opacity = 1;
-  e.target.parentNode.parentNode.style.backgroundColor = "transparent";
-}
-
-
-function addEventListeners(elems, func) {
-  for (var x=0; x<elems.length; x++) {
-    elems[x].addEventListener("mouseover", func)
-  }
+    for (var i=0; i<imgs.length; i++) {
+      imgs[i].style.animationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
+      imgs[i].style.webkitAnimationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
+    }
 
 }
 
@@ -267,51 +290,73 @@ function createImgGraphic() {
     return fisheye;
   }
 
-};
+}
+
+
+function addEventListeners(elems, func, eventType) {
+  for (var x=0; x<elems.length; x++) {
+    elems[x].addEventListener(eventType, func)
+  }
+
+}
+
+
+function addOverlayEvent(e) {
+  e.target.style.opacity = 1;
+  e.target.addEventListener("mouseout", removeOverlayEvent);
+  e.target.parentNode.childNodes[1].style.opacity = .4;
+  e.target.parentNode.parentNode.style.backgroundColor = "#859398";
+
+}
+
+
+function removeOverlayEvent(e) {
+  e.target.style.opacity = 0;
+  e.target.parentNode.childNodes[1].style.opacity = 1;
+  e.target.parentNode.parentNode.style.backgroundColor = "transparent";
+
+}
+
+
+function populateModalEvent(e){
+  var modElem = document.getElementsByClassName("modal")[0];
+  var containerElem = document.getElementById("modal-bg");
+  var minElem = document.getElementById("minimize");
+
+  var dataObj = {
+    objective: e.path[2].getAttribute('data-objective'),
+    process: e.path[2].getAttribute('data-process'),
+    details: e.path[2].getAttribute('data-details'), 
+    link: e.path[2].getAttribute('data-link')
+  }
+
+  var text = "OBJECTIVE:<br>" + dataObj.objective + "<br><br>" 
+  + "PROCESS:<br>" + dataObj.process + "<br><br>"
+  + "DETAILS:<br>" + dataObj.details + "<br><br>"
+  + "PROJECT:<br><a>" + dataObj.link + "</a><br><br>";
+
+  modElem.innerHTML = text;
+
+  containerElem.style.visibility = "visible";
+  containerElem.style.opacity = "1";
+  containerElem.style.zIndex = "5";
+  minElem.addEventListener("click", hideModalEvent);
+
+}
+
+
+function hideModalEvent(e) {
+  var modalBg = document.getElementById("modal-bg");
+  modalBg.style.opacity = "0";
+  modalBg.style.visibility = "hidden";
+  modalBg.style.zIndex = "-1";
+}
 
 
 window.onload = function() {
-  addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent);
   renderPattern();
   createImgGraphic();
-
-// Smooth scroll for in page links
-$(function(){
-    var target, scroll;
-
-    $("a[href*=#]:not([href=#])").on("click", function(e) {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            target = $(this.hash);
-            target = target.length ? target : $("[id=" + this.hash.slice(1) + "]");
-
-            if (target.length) {
-                if (typeof document.body.style.transitionProperty === 'string') {
-                    e.preventDefault();
-                  
-                    var avail = $(document).height() - $(window).height();
-                    console.log($(document).height(), $(window).height(), avail, target.offset().top, $(window).scrollTop());
-                    scroll = target.offset().top;
-                  
-                    if (scroll > avail) {
-                        scroll = avail;
-                    }
-
-                    $("html").css({
-                        "margin-top" : ( $(window).scrollTop() - scroll ) + "px",
-                        "transition" : "1s ease-in-out"
-                    }).data("transitioning", true);
-                }
-            }
-        }
-    });
-
-    $("html").on("transitionend webkitTransitionEnd msTransitionEnd oTransitionEnd", function (e) {
-        if (e.target == e.currentTarget && $(this).data("transitioning") === true) {
-            $(this).removeAttr("style").data("transitioning", false);
-            $("html, body").scrollTop(scroll);
-            return;
-        }
-    });
-});
+  addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent, "mouseover");
+  addEventListeners(document.getElementsByClassName("proj"), populateModalEvent, "click");
 
 };

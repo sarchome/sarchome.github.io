@@ -14,31 +14,6 @@
 
 }
 
-/*@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/Lato.eot) format ('embedded-opentype');
-
-  src: local('Lato'), url(../fonts/Lato.woff2) format ('woff2'),
-  local('Lato'), url(../fonts/Lato.ttf) format ('truetype'),
-  local('Lato'), url(../fonts/Lato.woff) format ('woff'),
-  local('Lato'), url(../fonts/Lato.svg) format ('svg');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/Josefin-Sans.eot) format ('embedded-opentype');
-  src: local('Josefin Sans'), url(../fonts/Josefin-Sans.ttf) format ('truetype'),
-  local('Josefin Sans'), url(../fonts/Josefin-Sans.woff) format ('woff'),
-  local('Josefin Sans'), url(../fonts/Josefin-Sans.woff2) format ('woff2'),
-  local('Josefin Sans'), url(../fonts/Josefin-Sans.svg) format ('svg');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}*/
-
 .graphic {
   margin: 0 0 0 0;
   padding: 0;
@@ -53,44 +28,13 @@
   top: 0;
 }
 
-#map {
-  position: absolute;
-  display: inline-block;
-  float: left;
-  width: 65%;
-  min-width: 50rem;
-  z-index: 3;
-
-/*  transform: translate3d(0, 0, -300px);
-  -webkit-transform: translate3d(0, 0, -300px);*/
-
-}
-
-#map img {
-  width: 80%;
-  margin-top: 15%;
-  margin-left: 10%;
-  display: inline-block;
-}
-
-#quote {
-  position: absolute;
-  left: 30%;
-  top: 55%;
-  width: 45rem;
-  z-index: 2;
-  font-family: Lato;
-  font-size: 1.5rem;
-  color: #859398;
-  z-index: 3;
-}
 
 #mask {
   position: absolute;
   height: 68rem;
   width: 45rem;
   top: 0;
-  right: 13.3rem;
+  right: 13.36rem;
   z-index: 2;
 }
 
@@ -121,11 +65,11 @@
 #skills {
   position: relative;
   width: 100vw;
-  min-width: 50rem;
-  height: 22rem;
+  min-width: 700px;
+  height: 19rem;
   bottom: 0;
   margin: auto auto;
-  padding-top: 4rem;
+  padding-top: 3rem;
 
   /*background: -webkit-linear-gradient(90deg, #133649 1%, #859398 99%);*/
   background: #859398; /* #222;*/
@@ -136,7 +80,7 @@
 
 #skills h2 {
   margin: auto auto;
-  padding-bottom: 1rem;
+  /*padding-bottom: 1rem;*/
   color: whitesmoke;
   text-align: center;
   font-family: 'Raleway', sans-serif;
@@ -183,6 +127,8 @@
   border: white 10px solid;
   box-shadow: 0 1px 2px #cccccc;
   background-color: transparent;
+  cursor: pointer;
+
   -webkit-transition: background-color .5s;
   -moz-transition: background-color .5s;
   -o-transition: background-color .5s;
@@ -213,7 +159,7 @@
   -webkit-transform: translateZ(0px);
 }
 
-.proj a img {
+.proj img {
   /*width: 30rem;*/
   height: 100%;
   width: 100%;
@@ -224,8 +170,8 @@
   -o-transition: opacity .5s;
   transition: opacity .5s;
 
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .projs-container .head {
@@ -240,13 +186,13 @@
   margin: auto auto;
 }
 
-.filmstrip {
+/*.filmstrip {
   width: 100%;
   height: 18rem;
   bottom: 4rem;
   margin: auto auto;
-  background-color: #222;/*#859398;*/
-}
+  background-color: #222;#859398;
+}*/
 
 .container {
   position: absolute;
@@ -270,18 +216,19 @@
 
 .contact {
   position: absolute;
-  left: 77%;
+  left: 71%;
+  top: 60%;
 /*  right: 80px;*/
 
-  float
   display: inline-block;
   margin-top: 2rem;
-  padding: 1rem;
-  width: 21rem;
-  font-family: "Josefin Sans";
+  padding: 8rem;
+  width: 20rem;
+  font-family: 'Lato';
   font-size: 2.5rem;
-  line-height: 130%;
+  line-height: 150%;
   color: #859398;
+  z-index: 3;
 }
 
 .contact-icons img {
@@ -314,7 +261,7 @@
   height: 3rem;
   bottom: 0;
   padding-top: 1rem;
-  font-family: Lato;
+  font-family: Roboto;
   font-size: 1.3rem;
   color: gray;
   text-align: center;
@@ -325,4 +272,59 @@
 
 @media (min-width: 1000px) {
 
+}
+
+#modal-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(204,204,204,.7);
+
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.modal {
+  /*opacity: 0;*/
+  position: absolute;
+  left: 50%;
+  margin-top: 95rem;
+  width: 65rem;
+  height: 39rem;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 3;
+  font-family: Lato;
+  color: #666;
+  font-size: 1.9rem;
+  padding: 4rem;
+  box-shadow: 0 10px 10px #999999;
+  transform: translate3d(-50%,0,0);
+  /*visibility: hidden;*/
+  /*z-index: -1;*/
+
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+#minimize {
+  position: absolute;
+  left: 50%;
+  padding: 1rem;
+  font-family: Raleway;
+  font-size: 2.5rem;
+  margin-top: 95rem;
+  z-index: 4;
+  color: gray;
+  text-align: center;
+  cursor: default;
+  transform: translate3d(31.5rem,1.3rem,0);
 }
