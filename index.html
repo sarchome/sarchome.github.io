@@ -26,13 +26,13 @@
     <meta name="author" content="sarahcho" />
     <meta name="keywords" content="sarah cho web dev" />
 
+    <script type="text/javascript" src="js/vendor/jquery-2.1.3.js"></script>
+
     <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
-    <link rel="stylesheet" href="css/mobile.css" type="text/css" media='only screen and (max-device-width: 480px)' />
+    <!-- <link rel="stylesheet" href="css/mobile.css" type="text/css" media='only screen and (max-device-width: 480px)' /> -->
     <script type="text/javascript" src="js/vendor/d3-3.3.13.js"></script>
-
-    <link href='http://fonts.googleapis.com/css?family=Lato:100|Roboto' rel='stylesheet' type='text/css'>
 
   </head>
 
@@ -48,7 +48,7 @@
             <img src="img/title_02.svg" alt="front-end web developer"/>
           </div>
           <div id="fade03" class="fade03 anim">
-            <a target="_blank" href="mailto:sarcho@gmail.com"><img src="img/title_03.svg" alt="sarcho at gmail dot com"/></a>
+            <a target="_blank" href="mailto:sarah@sarahcho.me"><img src="img/title_03.svg" alt="s at sarahcho dot me"/></a>
           </div>
           <div id="btn">
             <a href="#projs"><img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/></a>
@@ -66,12 +66,13 @@
     </div>
 
     <div id="projs">
+
       <div class="projs-container">
-        <div class="head">
+        <div class="projs-header">
           <img src="img/header-01.svg"/>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="An app that display a user's Instagram feed" data-process="Transitions and parallax effects using CSS.  Built with CSS3, Ruby on Rails, Javascript, and deployed on Heroku. Uses the Instagram api and Oauth2 authentication." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
+          <div class="proj" data-objective="An app that display a user's Instagram feed using CSS3 effects." data-process="Transitions/animations and parallax effects using CSS.  Built with CSS3, Ruby on Rails, Javascript, and deployed on Heroku. Uses the Instagram api and Oauth2 authentication." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
             <a javascript:void(0);>
               <img src="img/chompy_sq.png"/>
               <div class="overlay">
@@ -85,7 +86,7 @@
           </div>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="Informational-gathering video-sharing web app where users can ask questions and post videos answers." data-process="Video capture takes place in the browser without additional plugins.  Separate audio and video files are combined and converted to a lightweight webm format and saved to Amazon Web Services.  Data is stored in a Postgres database. Built with Ruby on Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed to Heroku" data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
+          <div class="proj" data-objective="Video-sharing web app where users ask questions and record answers through video that is captured in the browser." data-process="Video capture takes place in the browser without plugins using webRTC.  Separate audio and video files are combined and converted to a lightweight webm format and saved to Amazon Web Services.  Data is stored in a Postgres database. Built with Ruby on Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed to Heroku" data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
             <a javascript:void(0);>
               <img src="img/qurl_sq.png"/>
               <div class="overlay">
@@ -100,7 +101,7 @@
           </div>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="The main challenge was using a document database and creating many-to-many relationships.  Built with Ruby on Rails and MongoDB." data-details="Solo project completed in two weeks." data-link="">
+          <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="The main challenge was using a document database and creating many-to-many relationships.  Built with Ruby on Rails and MongoDB." data-details="Solo project completed in two weeks.">
             <a javascript:void(0);>
               <img src="img/proj3_sq.png"/>
               <div class="overlay">
@@ -121,9 +122,7 @@
           <div class="color-collection" data-size="51">
           </div>
         </div>
-
         <div id="skills">
-<!--           <img src="img/skills.svg" style="width: 60rem; margin: auto 25%; display: block"/> -->
           <span><h2>SKILLSET</h2></span>
 
           <div class="column-container">
@@ -151,22 +150,28 @@
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
 
     <div id="bio">
+      <div id="about">
+        hi
+      </div>
 
       <div>
         <div class="contact">
+          <div class="contact-header">
+            contact:
+          </div>
           Sarah Cho<br>
-          (310)869-6516<br>
-          sarcho@gmail.com
+          <a target="_blank" href="mailto:sarah@sarahcho.me" id="email">sarah@sarahcho.me</a>
           <div class="contact-icons">
-            <a target="_blank" href="mailto:sarcho@gmail.com"><img src="img/icon_mail.svg" alt="mail link"/></a>
             <a href="https://github.com/sarchome"><img src="img/icon_github.svg" alt="github link"/></a>
+            <a>resume</a>
           </div>
         </div>
+        <img id="map" src="img/map_world_dots.png"/>
         <img id="mask" src="img/mask.svg"/>
         <img id="section" src="img/section.svg"/>
         <img id="profile" src="img/profile.png"/>

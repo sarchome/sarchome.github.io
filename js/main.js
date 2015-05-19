@@ -332,8 +332,11 @@ function populateModalEvent(e){
 
   var text = "OBJECTIVE:<br>" + dataObj.objective + "<br><br>" 
   + "PROCESS:<br>" + dataObj.process + "<br><br>"
-  + "DETAILS:<br>" + dataObj.details + "<br><br>"
-  + "PROJECT:<br><a>" + dataObj.link + "</a><br><br>";
+  + "DETAILS:<br>" + dataObj.details + "<br><br>";
+
+  if (dataObj.link != null) {
+   text += "PROJECT:<br><a href=\'dataObj.link'\>" + dataObj.link + "</a><br><br>"
+  };
 
   modElem.innerHTML = text;
 
@@ -354,6 +357,7 @@ function hideModalEvent(e) {
 
 
 window.onload = function() {
+
   renderPattern();
   createImgGraphic();
   addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent, "mouseover");
