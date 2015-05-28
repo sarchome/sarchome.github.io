@@ -374,25 +374,25 @@
 }
 
 #about-header {
-  width: 65%;
+  width: 66%;
   top: 6rem;
   position: relative;
 }
 
 #about-header img {
   position: relative;
-  height: 4rem;
-  width: 35%;
+  height: 3rem;
+  width: 33%;
   margin: auto auto;
   padding-bottom: 1rem;
   display: block;
-  border-bottom: 1px solid #27272d;
+  border-bottom: 1px solid #999999;
   z-index: 3;
 }
 
 #about {
-  top: 15rem;
-  width: 65%;
+  top: 14rem;
+  width: 67%;
   position: absolute;
   z-index: 3;
 
