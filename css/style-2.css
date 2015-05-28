@@ -386,12 +386,12 @@
   margin: auto auto;
   padding-bottom: 1rem;
   display: block;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #dddddd;
   z-index: 3;
 }
 
 #about {
-  top: 14rem;
+  top: 13rem;
   width: 67%;
   position: absolute;
   z-index: 3;
