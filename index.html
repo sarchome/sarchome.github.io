@@ -30,10 +30,9 @@
 
     <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/test.css" type="text/css">
+    <link rel="stylesheet" href="css/style-2.css" type="text/css">
     <!-- <link rel="stylesheet" href="css/mobile.css" type="text/css" media='only screen and (max-device-width: 480px)' /> -->
     <script type="text/javascript" src="js/vendor/d3-3.3.13.js"></script>
-
   </head>
 
   <body>
@@ -51,7 +50,7 @@
             <a target="_blank" href="mailto:sarah@sarahcho.me"><img src="img/title_03.svg" alt="s at sarahcho dot me"/></a>
           </div>
           <div id="btn">
-            <a href="#projs"><img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/></a>
+            <img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/>
           </div>
         </div>
     </div>
@@ -72,7 +71,7 @@
           <img src="img/header-01.svg"/>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="An app that display a user's Instagram feed using CSS3 effects." data-process="Transitions/animations and parallax effects using CSS.  Built with CSS3, Ruby on Rails, Javascript, and deployed on Heroku. Uses the Instagram api and Oauth2 authentication." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
+          <div class="proj" data-objective="An app that display a user's Instagram feed using CSS3 effects." data-process="Used CSS3 transitions/animations and parallax effects for photo-viewing site.  Utilized the Instagram api.  Built with Rails and Javascript, and deployed on Heroku." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
             <a javascript:void(0);>
               <img src="img/chompy_sq.png"/>
               <div class="overlay">
@@ -82,11 +81,11 @@
                 {css3 javascript rails}
               </div>
             <div class="white-border"></div>
-            <!-- </a> -->
+            </a>
           </div>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="Video-sharing web app where users ask questions and record answers through video that is captured in the browser." data-process="Video capture takes place in the browser without plugins using webRTC.  Separate audio and video files are combined and converted to a lightweight webm format and saved to Amazon Web Services.  Data is stored in a Postgres database. Built with Ruby on Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed to Heroku" data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
+          <div class="proj" data-objective="Video-sharing web app where users ask questions and record video answers." data-process="The main challenge was in having video capture take place in the browser.  Using a library based on webRTC, video is captured in the browser without using any plugins or programs.  The server pulls up separate audio and video files which are decoded, combined and converted to a lightweight webm format, and finally pushed to Amazon Web Services.  Built with Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed on Heroku." data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
             <a javascript:void(0);>
               <img src="img/qurl_sq.png"/>
               <div class="overlay">
@@ -101,7 +100,7 @@
           </div>
         </div>
         <div class="padding">
-          <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="The main challenge was using a document database and creating many-to-many relationships.  Built with Ruby on Rails and MongoDB." data-details="Solo project completed in two weeks.">
+          <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="This was my first experience working with Mongo and I was looking for a challenge.  The main challenge was in creating the many-to-many model relationships since Mongo is a non-relational database.  Built using Rails and Mongodb." data-details="Solo project completed in two weeks.">
             <a javascript:void(0);>
               <img src="img/proj3_sq.png"/>
               <div class="overlay">
@@ -128,9 +127,17 @@
           <div class="column-container">
             <div class="third">
               <ul>
-                <li>HTML</li>
-                <li>CSS3</li>
+                <li>HTML/CSS</li>
                 <li>Javascript</li>
+                <li>Ruby</li>
+                <li>Python</li>
+              </ul>
+            </div>
+            <div class="third">
+              <ul>
+                <li>Ruby on Rails</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
               </ul>
             </div>
             <div class="third">
@@ -140,14 +147,6 @@
                 <li>d3.js</li>
               </ul>
             </div>
-            <div class="third">
-              <ul>
-                <li>Ruby</li>
-                <li>Ruby on Rails</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -155,10 +154,14 @@
     </div>
 
     <div id="bio">
-      <div id="about">
-        hi
+      <div class="about-container">
+        <div id="about-header">
+          <img src="img/header-02.svg"/>
+        </div>
+        <div id="about">
+          <img src="img/about.svg">
+        </div>
       </div>
-
       <div>
         <div class="contact">
           <div class="contact-header">
@@ -168,7 +171,7 @@
           <a target="_blank" href="mailto:sarah@sarahcho.me" id="email">sarah@sarahcho.me</a>
           <div class="contact-icons">
             <a href="https://github.com/sarchome"><img src="img/icon_github.svg" alt="github link"/></a>
-            <a>resume</a>
+<!--             <a>resume</a> -->
           </div>
         </div>
         <img id="map" src="img/map_world_dots.png"/>

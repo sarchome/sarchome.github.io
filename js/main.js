@@ -293,6 +293,56 @@ function createImgGraphic() {
 }
 
 
+function currentYPosition() {
+    // Firefox, Chrome, Opera, Safari
+    if (self.pageYOffset) return self.pageYOffset;
+    // Internet Explorer 6 - standards mode
+    if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+    // Internet Explorer 6, 7 and 8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
+
+function elemYPosition(eID) {
+    var elem = document.getElementById(eID);
+    var y = elem.offsetTop;
+    var node = elem;
+    while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+    } return y;
+}
+
+
+function smoothScroll(eID) {
+    var startY = currentYPosition();
+    var stopY = elemYPosition(eID);
+    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY); return;
+    }
+    var speed = Math.round(distance / 100);
+    if (speed >= 20) speed = 20;
+    if (speed < 10) speed = 10;
+
+    var step = Math.round(distance / 25);
+    var leapY = stopY > startY ? startY + step : startY - step;
+    var timer = 0;
+    if (stopY > startY) {
+        for ( var i=startY; i<stopY; i+=step ) {
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+        } return;
+    }
+    for ( var i=startY; i>stopY; i-=step ) {
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+    }
+    return false;
+}
+
+
 function addEventListeners(elems, func, eventType) {
   for (var x=0; x<elems.length; x++) {
     elems[x].addEventListener(eventType, func)
@@ -304,7 +354,7 @@ function addEventListeners(elems, func, eventType) {
 function addOverlayEvent(e) {
   e.target.style.opacity = 1;
   e.target.addEventListener("mouseout", removeOverlayEvent);
-  e.target.parentNode.childNodes[1].style.opacity = .4;
+  e.target.parentNode.childNodes[1].style.opacity = .35;
   e.target.parentNode.parentNode.style.backgroundColor = "#859398";
 
 }
@@ -324,10 +374,10 @@ function populateModalEvent(e){
   var minElem = document.getElementById("minimize");
 
   var dataObj = {
-    objective: e.path[2].getAttribute('data-objective'),
-    process: e.path[2].getAttribute('data-process'),
-    details: e.path[2].getAttribute('data-details'), 
-    link: e.path[2].getAttribute('data-link')
+    objective: this.dataset.objective,
+    process: this.dataset.process,
+    details: this.dataset.details, 
+    link: this.dataset.link,
   }
 
   var text = "OBJECTIVE:<br>" + dataObj.objective + "<br><br>" 
@@ -362,5 +412,6 @@ window.onload = function() {
   createImgGraphic();
   addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent, "mouseover");
   addEventListeners(document.getElementsByClassName("proj"), populateModalEvent, "click");
+  document.getElementById("fade04").addEventListener("click", function(e){smoothScroll('projs')});
 
 };
