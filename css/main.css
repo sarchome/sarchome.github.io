@@ -32,6 +32,7 @@
   padding: 0;
   height: 18px;
   width: 100vw;
+  min-width: 115rem;
   opacity: .85;
 }
 
@@ -78,8 +79,8 @@
 
 #skills {
   position: relative;
-  width: 100%;
-  min-width: 700px;
+  width: 100vw;
+  min-width: 115rem;
   height: 27rem;
   bottom: 0;
   margin: auto auto;
@@ -122,7 +123,7 @@
 
 .projs-header {
   position: relative;
-  width: 1150px;
+  width: 115rem;
   margin: 3rem auto 5.5rem auto;
   /*margin: auto auto;*/
   border-bottom: 1px solid #dddddd;
@@ -130,7 +131,7 @@
 
 .projs-container {
   position: relative;
-  width: 1150px;
+  width: 115rem;
   margin: auto auto;
 }
 
@@ -149,9 +150,8 @@
 
 .proj {
   position: relative;
-  width: 300px;
-  height: 300px;
-  /*opacity: 0;*/
+  width: 30rem;
+  height: 30rem;
   display: inline-block;
   border: white 10px solid;
   box-shadow: 0 1px 2px #cccccc;
@@ -165,16 +165,12 @@
 }
 
 .overlay {
-  width: 26.5rem;
-  height: 26.5rem;
+  width: 26rem;
+  height: 26rem;
   position: absolute;
   padding: 2rem;
   opacity: 0;
   text-align: center;
-/*  background-image: url('../img/icon_white.svg');
-  background-size: 8rem 8rem;
-  background-repeat: no-repeat;
-  background-position: center;*/
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 3rem;
@@ -189,7 +185,6 @@
 }
 
 .proj img {
-  /*width: 30rem;*/
   height: 100%;
   width: 100%;
   position: absolute;
