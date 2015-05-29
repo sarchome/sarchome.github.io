@@ -375,7 +375,7 @@
 
 #about-header {
   width: 66%;
-  top: 6rem;
+  top: 12rem;
   position: relative;
 }
 
@@ -391,15 +391,15 @@
 }
 
 #about {
-  top: 13rem;
-  width: 67%;
+  top: 20rem;
+  width: 70%;
   position: absolute;
   z-index: 3;
 
 }
 
 #about img {
-  width: 70%;
+  width: 80%;
   display: block;
   margin: auto auto;
   z-index: 3;
