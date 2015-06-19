@@ -5,7 +5,7 @@ html {
 html, body {
   margin: 0 0;
   padding: 0;
-  /*-webkit-font-smoothing: antialiased;*/
+  -webkit-font-smoothing: subpixel-antialiased;
   -webkit-perspective: 1000px;
   perspective: 1000px;
 
@@ -33,6 +33,8 @@ a {
   background-image: url('../img/bg-body.png');
   background-size: repeat;
   background-position: center;
+  border-bottom: #dddddd solid 3px;
+
 }
 
 #projs {
@@ -42,7 +44,6 @@ a {
   min-height: 84rem;
   position: relative;
   background-color: #f2f2f2;
-  /*overflow-x: hidden;*/
   overflow-y: hidden;
   overflow-x: scroll;
 }
@@ -76,13 +77,13 @@ a {
 }
 
 .indiv {
-  opacity: .1;
+  opacity: .7;
   width: 11rem;
   height: 11rem;
   float: left;
   margin: 0;
-  -webkit-animation: startingTrans 6s forwards, pulse 1.5s ease-in;
-  animation: startingTrans 6s forwards, pulse 1.5s ease-in;
+/*  -webkit-animation: startingTrans 6s forwards, pulse 1.5s ease-in;
+  animation: startingTrans 6s forwards, pulse 1.5s ease-in;*/
 }
 
 #title {
@@ -100,9 +101,14 @@ a {
   z-index: 2;
 }
 
-.fade01 {
+/*.fade01 {
   -webkit-animation: titleFade 1.2s 4.4s 1 forwards;
   animation: titleFade 1.2s 4.4s 1 forwards;
+}*/
+
+.fade01 {
+  -webkit-animation: titleFade 1.2s .5s 1 forwards;
+  animation: titleFade 1.2s .5s 1 forwards;
 }
 
 #fade02 {
@@ -112,9 +118,14 @@ a {
   z-index: 2;
 }
 
-.fade02 {
+/*.fade02 {
   -webkit-animation: titleFade 1.3s 5.4s 1 forwards;
   animation: titleFade 1.3s 5.4s 1 forwards;
+}*/
+
+.fade02 {
+  -webkit-animation: titleFade 1.3s 1.7s 1 forwards;
+  animation: titleFade 1.3s 1.7s 1 forwards;
 }
 
 #fade03 {
@@ -124,9 +135,14 @@ a {
   z-index: 2;
 }
 
-.fade03 {
+/*.fade03 {
   -webkit-animation: titleFade 1.3s 5.6s 1 forwards;
   animation: titleFade 1.3s 5.6s 1 forwards;
+}*/
+
+.fade03 {
+  -webkit-animation: titleFade 1.3s 1.9s 1 forwards;
+  animation: titleFade 1.3s 1.9s 1 forwards;
 }
 
 .fade03 img {
@@ -149,9 +165,14 @@ a {
   opacity: 0;
 }
 
-.fade04 {
+/*.fade04 {
   -webkit-animation: titleFade 2.5s 6.2s 1 forwards;
   animation: titleFade 2.5s 6.2s 1 forwards;
+}*/
+
+.fade04 {
+  -webkit-animation: titleFade 2.5s 2.4s 1 forwards;
+  animation: titleFade 2.5s 2.4s 1 forwards;
 }
 
 @-webkit-keyframes pulse {
