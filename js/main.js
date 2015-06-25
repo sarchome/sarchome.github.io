@@ -385,7 +385,7 @@ function populateModalEvent(e){
   + "DETAILS:<br>" + dataObj.details + "<br><br>";
 
   if (dataObj.link != null) {
-   text += "PROJECT:<br><a href=\'dataObj.link'\>" + dataObj.link + "</a><br><br>"
+   text += "PROJECT:<br><a href=" + dataObj.link + ">" + dataObj.link + "</a><br><br>"
   };
 
   modElem.innerHTML = text;
