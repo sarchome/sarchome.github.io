@@ -95,7 +95,7 @@ a {
 }
 
 #fade01 {
-  margin: 34rem auto auto auto;
+  margin: 35rem auto 3rem auto;
   width: 40rem;
   opacity: 0;
   z-index: 2;
@@ -108,7 +108,7 @@ a {
 
 #fade02 {
   margin: auto;
-  width: 30rem;
+  width: 33rem;
   opacity: 0;
   z-index: 2;
 }
@@ -119,8 +119,8 @@ a {
 }
 
 #fade03 {
-  margin: 4rem auto auto auto;
-  width: 17rem;
+  margin: 4.5rem auto auto auto;
+  width: 20rem;
   opacity: 0;
   z-index: 2;
 }
