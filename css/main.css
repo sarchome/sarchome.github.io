@@ -13,6 +13,16 @@
 
 }
 
+@-moz-document url-prefix() {
+  /* hide the system icon for loading images */
+  img:-moz-loading {
+      visibility: hidden;
+  }
+  /* hide the system icon for broken images */
+  img:-moz-broken {
+      -moz-force-broken-image-icon: 0;
+  }
+}
 
 .graphic {
   margin: 0 0 0 0;
