@@ -236,19 +236,17 @@
   right: 1rem;
   top: 30%;
 /*  right: 80px;*/
-  margin-top: 2rem;
   padding: 8rem;
   width: 20rem;
   font-family: 'Lato';
   font-size: 2.5rem;
-  line-height: 130%;
+  line-height: 115%;
   color: #859398;
   z-index: 3;
 }
 
 .contact-icons {
   font-size: 1.5rem;
-  margin-top: .5rem;
 }
 
 .contact-icons img {
@@ -384,9 +382,14 @@
 
 #about {
   top: 20rem;
-  width: 70%;
+  width: 50%;
   position: absolute;
   z-index: 3;
+  text-align: justify;
+  margin: 0rem 14rem;
+  font: 2.5rem Raleway, sans-serif;
+  letter-spacing: .5px;
+  color: grey;
 
 }
 

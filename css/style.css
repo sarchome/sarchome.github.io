@@ -22,6 +22,13 @@ a {
   text-decoration: none;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 #main {
   width: 100%;
   min-width: 115rem;
@@ -119,7 +126,7 @@ a {
 }
 
 #fade03 {
-  margin: 7.5rem auto auto auto;
+  margin: 12rem auto auto auto;
   width: 20rem;
   opacity: 0;
   z-index: 2;
@@ -137,7 +144,7 @@ a {
 #btn {
   width: 8rem;
   z-index: 3;
-  margin: 12rem auto auto auto;
+  margin: 5rem auto auto auto;
   opacity: .7;
 }
 
@@ -165,37 +172,24 @@ a {
   50% { transform: scale(1.01,1); -webkit-transform: scale(1.01,1); }
 }
 
-/*@-webkit-keyframes startingTrans {
-  10% { opacity: 1; }
-  25% { opacity: 1; background-color: darkgray; }
-  35% { opacity: 1; background-color: darkgray; }
-  45% { opacity: 0.1; background-color: white; }
-  65% { opacity: 0.1; background-color: white; }
-  80% { opacity: 1; background-color: white; }
-  95% { opacity: 1; background-color: white; }
-  100% { opacity: 0.8; background-color: white; }
-}
-
-@keyframes startingTrans {
-  10% { opacity: 1; }
-  25% { opacity: 1; background-color: darkgray; }
-  35% { opacity: 1; background-color: darkgray; }
-  45% { opacity: 0.1; background-color: white; }
-  65% { opacity: 0.1; background-color: white; }
-  80% { opacity: 1; background-color: white; }
-  95% { opacity: 1; background-color: white; }
-  100% { opacity: 0.8; background-color: white; }
-}*/
-
 @-webkit-keyframes startingTrans {
   10% { opacity: 1; }
-  25% { opacity: 1; }
   35% { opacity: 1; }
   45% { opacity: 0.1; }
   65% { opacity: 0.1; }
   80% { opacity: 1; }
   95% { opacity: 1; }
-  100% { opacity: 0.8; }
+  100% { opacity: 0.8; background-color: white; }
+}
+
+@keyframes startingTrans {
+  10% { opacity: 1; }
+  35% { opacity: 1; }
+  45% { opacity: 0.1; }
+  65% { opacity: 0.1; }
+  80% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { opacity: 0.8; background-color: white; }
 }
 
 /*@keyframes startingTrans {

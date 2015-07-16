@@ -413,5 +413,9 @@ window.onload = function() {
   addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent, "mouseover");
   addEventListeners(document.getElementsByClassName("proj"), populateModalEvent, "click");
   document.getElementById("fade04").addEventListener("click", function(e){smoothScroll('projs')});
+  (function() { 
+    var body = document.getElementsByTagName("body")[0];
+    body.classList.remove("preload") 
+  })();
 
 };
