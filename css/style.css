@@ -165,7 +165,7 @@ a {
   50% { transform: scale(1.01,1); -webkit-transform: scale(1.01,1); }
 }
 
-@-webkit-keyframes startingTrans {
+/*@-webkit-keyframes startingTrans {
   10% { opacity: 1; }
   25% { opacity: 1; background-color: darkgray; }
   35% { opacity: 1; background-color: darkgray; }
@@ -185,7 +185,29 @@ a {
   80% { opacity: 1; background-color: white; }
   95% { opacity: 1; background-color: white; }
   100% { opacity: 0.8; background-color: white; }
+}*/
+
+@-webkit-keyframes startingTrans {
+  10% { opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 1; }
+  45% { opacity: 0.1; }
+  65% { opacity: 0.1; }
+  80% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
+
+/*@keyframes startingTrans {
+  10% { opacity: 1; }
+  25% { opacity: 1; background-color: darkgray; }
+  35% { opacity: 1; background-color: darkgray; }
+  45% { opacity: 0.1; background-color: white; }
+  65% { opacity: 0.1; background-color: white; }
+  80% { opacity: 1; background-color: white; }
+  95% { opacity: 1; background-color: white; }
+  100% { opacity: 0.8; background-color: white; }
+}*/
 
 @-webkit-keyframes titleFade {
   0% { -webkit-transform: scale(.8); transform: scale(.8); opacity: 0; }
