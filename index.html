@@ -19,17 +19,14 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="img/icon.png" />
-
     <title>sarah cho</title>
-
     <meta name="description" content="lorum ipsum" />
     <meta name="author" content="sarahcho" />
-    <meta name="keywords" content="sarah cho web development developer front end" />
-
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta name="keywords" content="sarah cho web development front end developer software engineer" />
+    <meta name="viewport" content="width=300, initial-scale=1">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
-<!--     <link rel="stylesheet" href="css/mobile.css" type="text/css" media='only screen and (max-device-width: 640px)' /> -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,400' rel='stylesheet' type='text/css'>
+
     <script type="text/javascript" src="js/vendor/d3-3.3.13.js"></script>
   </head>
 
@@ -42,87 +39,72 @@
             <img src="img/title_01.svg" alt="Sarah Cho"/>
           </div>
           <div id="fade02" class="fade02 anim">
-            <img src="img/title_02.svg" alt="front-end web developer"/>
+            <img src="img/title_02.svg" alt="Web Developer"/>
           </div>
           <div id="fade03" class="fade03 anim">
-            <a target="_blank" href="mailto:sarah@sarahcho.me"><img src="img/title_03.svg" alt="s at sarahcho dot me"/></a>
+            <a target="_blank" rel='noopener noreferrer' href="mailto:sarah@sarahcho.me"><img src="img/title_03.svg" alt="email address sarah at sarahcho.me"/></a>
           </div>
-          <div id="btn">
-            <img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/>
+          <div id="btn"><img class="fade04 anim" id="fade04" src="img/scroll-icon.svg" alt="scroll down"/>
           </div>
         </div>
     </div>
 
     <div id="modal-bg">
       <div>
-        <div id="minimize">X
-        </div>
         <div class="modal">
+          <p class="minimize">X
+          </p>
+          <p>OBJECTIVE:</p>
+          <p id="objective" class="paragraph"></p>
+          <p>PROCESS:</p>
+          <p id="process" class="paragraph"></p>
+          <p>DETAILS:</p>
+          <p id="details" class="paragraph"></p>
         </div>
       </div>
     </div>
 
     <div id="projs">
-
-
       <div class="projs-header">
-        <img src="img/header-01.svg"/>
+        <img src="img/header-01.svg" alt="Example Projects text"/>
       </div>
       <div class="projs-container">
-        <div class="padding">
+        <div class="projs-blk">
           <div class="proj" data-objective="An app that display a user's Instagram feed using CSS3 effects." data-process="Used CSS3 transitions/animations and parallax effects for photo-viewing site.  Utilized the Instagram api.  Built with Rails and Javascript, and deployed on Heroku." data-details="Solo project completed in 1.5 weeks." data-link="http://chompychomp.herokuapp.com">
-            <a javascript:void(0);>
-              <img src="img/chompy_sq.png"/>
-              <div class="overlay">
-                <br><br>
-                CHOMPY
-                <br><br>
-                {css3 javascript rails}
-              </div>
-            <div class="white-border"></div>
-            </a>
+            <div class="overlay"></div>
+            <img src="img/proj_01_chompy_sq.png" alt="Image of project 1"/>
+            <div class="overlay-text">
+              <p class="proj-title">CHOMPY</p>
+              <p class="proj-tech">{css3 javascript rails}</p>
+            </div>
           </div>
-        </div>
-        <div class="padding">
           <div class="proj" data-objective="Video-sharing web app where users ask questions and record video answers." data-process="The main challenge was in having video capture take place in the browser.  Using a library based on webRTC, video is captured in the browser without using any plugins or programs.  The server pulls up separate audio and video files which are decoded, combined and converted to a lightweight webm format, and finally pushed to Amazon Web Services.  Built with Rails, Postgres, webRTC/recordRTC, AWS, Bootstrap, and deployed on Heroku." data-details="Group project completed in two weeks. Responsible for back-end, deployment, front-end." data-link="http://qurlapp.herokuapp.com">
-            <a javascript:void(0);>
-              <img src="img/qurl_sq.png"/>
-              <div class="overlay">
-                <br>
-                QURL
-                <br>
-                <br>
-                {html5 rails postgres javascript bootstrap webRTC}
+              <div class="overlay"></div>
+              <img src="img/proj_02_qurl_sq.png" alt="Image of project 2"/>
+              <div class="overlay-text">
+                <p class="proj_title">QURL</p>
+                <p class="proj_tech">{html5 rails postgres javascript bootstrap webRTC}</p>
               </div>
-              <div class="white-border"></div>
-            </a>
           </div>
-        </div>
-        <div class="padding">
+
           <div class="proj" data-objective="A prototype of a multi-location, restaurant-ordering site." data-process="This was my first experience working with Mongo and I was looking for a challenge.  The main challenge was in creating the many-to-many model relationships since Mongo is a non-relational database.  Built using Rails and Mongodb." data-details="Solo project completed in two weeks.">
-            <a javascript:void(0);>
-              <img src="img/proj3_sq.png"/>
-              <div class="overlay">
-                <br>
-                RESTO
-                <br>
-                <br>
-                {rails mongo javascript bootstrap}
+              <div class="overlay"></div>
+              <img src="img/proj_03_sq.png" alt="Image of project 3"/>
+              <div class="overlay-text">
+                <p class="proj_title">RESTO</p>
+                <p class="proj_tech">{rails mongo javascript bootstrap}</p>
               </div>
-              <div class="white-border"></div>
-            </a>
           </div>
         </div>
       </div>
 
-      <div class="bottom">
+      <div class="skills-container">
         <div class="graphic">
           <div class="color-collection" data-size="51">
           </div>
         </div>
         <div id="skills">
-          <span><h2>SKILLSET</h2></span>
-
+          <h2>SKILLSET</h2>
           <div class="column-container">
             <div class="third">
               <ul>
@@ -134,16 +116,16 @@
             </div>
             <div class="third">
               <ul>
-                <li>Ruby on Rails</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
+                <li>ReactJS</li>
+                <li>jQuery</li>
+                <li>d3.js</li>
               </ul>
             </div>
             <div class="third">
               <ul>
-                <li>AngularJS</li>
-                <li>jQuery</li>
-                <li>d3.js</li>
+                <li>Rails</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
               </ul>
             </div>
           </div>
@@ -154,10 +136,8 @@
 
     <div id="bio">
       <div class="about-container">
-        <div id="about-header">
-          <img src="img/header-02.svg"/>
-        </div>
-        <div id="about">
+          <img src="img/header-02.svg" alt="About Me text"/>
+          <p class="about-desc">
                     I'm a web developer from Los Angeles, CA.
                     I enjoy creating simple, beautiful, and intuitive interfaces,
                     building them with clean, concise code.
@@ -167,31 +147,26 @@
                     creating unique experiences, and telling a story.
                     I'm always interested in broadening my knowledge 'stack'
                     as well as staying engaged creatively.
-        </div>
+          </p>
       </div>
-      <div>
-        <div class="contact">
-          <div class="contact-header">
-            contact:
-          </div>
-          Sarah Cho<br>
-          <a target="_blank" href="mailto:sarah@sarahcho.me" id="email">sarah@sarahcho.me</a>
+      <div class="contact-container">
+        <img id="section" src="img/section.svg" alt="page background and divider"/>
+        <img id="mask" src="img/mask.svg"/>
+        <img id="profile" src="img/profile.png" alt="Profile Photo"/>
+        <div class="contact-blk">
+          <p class="contact-header">contact:</p>
+          <p>Sarah Cho</p>
+          <a target="_blank" rel='noopener noreferrer' href="mailto:sarah@sarahcho.me" id="email">sarah@sarahcho.me</a>
           <div class="contact-icons">
             <a href="https://github.com/sarchome"><img src="img/icon_github.svg" alt="github link"/></a>
-<!--             <a>resume</a> -->
           </div>
         </div>
-        <img id="map" src="img/map_world_dots.png"/>
-        <img id="mask" src="img/mask.svg"/>
-        <img id="section" src="img/section.svg"/>
-        <img id="profile" src="img/profile.png"/>
-
-      </div>
-      <div class="copyright">
-        © 2015 Sarah Cho
+        <img id="map" src="img/map_world_dots.png" alt="Dot Map of the World"/>
       </div>
     </div>
-
+    <footer class="copyright">
+      © 2016 Sarah Cho
+    </footer>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 

@@ -29,7 +29,6 @@ document.getElementsByClassName = function(className, context) {
   }
 
   return document.getElementsByClassName(className, context);
-
 }
 
 
@@ -37,43 +36,45 @@ function renderPattern() {
 
     var imgNum = 48;
     // var mainElem = document.getElementById("front-pattern");
-    var elem = document.getElementById("pattern");
+    var patternElem = document.getElementById("pattern");
 
-    (function() {
+    function titleImageAnimationDelays() {
+      var anim = document.getElementsByClassName("anim");
 
+      for (var i=anim.length-1; i>=0; i--) {
+
+        var idName = anim[i].getAttribute("id");
+        anim[i].classList.add(idName)
+      }
+
+      var imgs = patternElem.getElementsByClassName("indiv");
+
+      for (var i=0; i<imgs.length; i++) {
+        imgs[i].style.animationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
+        imgs[i].style.webkitAnimationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
+      }
+    }
+
+    function addPatternImages() {
       for (var i = 1; i <= imgNum; i++) {
-        var divElem = document.createElement("div");
-        elem.appendChild(divElem);
-        divElem.classList
-          .add("indiv");
 
+        var divElem = document.createElement("div");
         var newImgElem = document.createElement("img");
 
-        if (i.toString().length < 2) {
+        if (i < 10) {
           newImgElem.src = "img/pattern/"+ "0" + i.toString() + ".svg";
         } else {
           newImgElem.src = "img/pattern/"+ i.toString() + ".svg";
         };
 
-        divElem.appendChild(newImgElem);
+        newImgElem.classList.add("indiv");
+        patternElem.appendChild(newImgElem);
       }
 
-    })()
-
-
-    var anim = document.getElementsByClassName("anim");
-
-    for (var i=anim.length-1; i>=0; i--) {
-      var idName = anim[i].getAttribute("id");
-      anim[i].classList.add(idName)
+      titleImageAnimationDelays();
     }
 
-    var imgs = elem.getElementsByClassName("indiv");
-
-    for (var i=0; i<imgs.length; i++) {
-      imgs[i].style.animationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
-      imgs[i].style.webkitAnimationDelay = (250 + (Math.floor(Math.random() * i+1) *10)) + 'ms';
-    }
+    addPatternImages();
 
 }
 
@@ -289,7 +290,6 @@ function createImgGraphic() {
 
     return fisheye;
   }
-
 }
 
 
@@ -304,8 +304,8 @@ function currentYPosition() {
     return 0;
 }
 
-function elemYPosition(eID) {
-    var elem = document.getElementById(eID);
+function elemYPosition(elemId) {
+    var elem = document.getElementById(elemId);
     var y = elem.offsetTop;
     var node = elem;
     while (node.offsetParent && node.offsetParent != document.body) {
@@ -315,9 +315,9 @@ function elemYPosition(eID) {
 }
 
 
-function smoothScroll(eID) {
+function smoothScroll(elemId) {
     var startY = currentYPosition();
-    var stopY = elemYPosition(eID);
+    var stopY = elemYPosition(elemId);
     var distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 100) {
         scrollTo(0, stopY); return;
@@ -343,35 +343,48 @@ function smoothScroll(eID) {
 }
 
 
-function addEventListeners(elems, func, eventType) {
-  for (var x=0; x<elems.length; x++) {
-    elems[x].addEventListener(eventType, func)
+function addEventListeners(elem, func, eventType) {
+  if (Array.isArray(elem) == true) {
+    for (var x=0; x<elem.length; x++) {
+      elem[x].addEventListener(eventType, func)
+    }
+  } else {
+    elem.addEventListener(eventType, func)
   }
-
 }
 
+function addOverlay(e) {
+  e.stopPropagation();
 
-function addOverlayEvent(e) {
-  e.target.style.opacity = 1;
-  e.target.addEventListener("mouseout", removeOverlayEvent);
-  e.target.parentNode.childNodes[1].style.opacity = .35;
-  e.target.parentNode.parentNode.style.backgroundColor = "#859398";
+  var parent = e.target.parentNode;
+  var img = e.target.parentNode.childNodes[3];
+  var overlay = e.target.parentNode.childNodes[5];
 
+  overlay.style.opacity = 1;
+  img.style.opacity = .25;
+  parent.style.backgroundColor = "#607a83";
 }
 
+function removeOverlay(e) {
+  e.stopPropagation();
 
-function removeOverlayEvent(e) {
-  e.target.style.opacity = 0;
-  e.target.parentNode.childNodes[1].style.opacity = 1;
-  e.target.parentNode.parentNode.style.backgroundColor = "transparent";
+  var parent = e.target.parentNode;
+  var img = e.target.parentNode.childNodes[3];
+  var overlay = e.target.parentNode.childNodes[5];
 
+  overlay.style.opacity = 0;
+  img.style.opacity = 1;
+  parent.style.backgroundColor = "transparent";
 }
 
 
 function populateModalEvent(e){
-  var modElem = document.getElementsByClassName("modal")[0];
-  var containerElem = document.getElementById("modal-bg");
-  var minElem = document.getElementById("minimize");
+  var modalBg = document.getElementById("modal-bg");
+  var modal = document.getElementsByClassName("modal")[0];
+  var objective = document.getElementById("objective");
+  var process = document.getElementById("process");
+  var details = document.getElementById("details");
+  var project = document.getElementById("project");
 
   var dataObj = {
     objective: this.dataset.objective,
@@ -380,28 +393,25 @@ function populateModalEvent(e){
     link: this.dataset.link,
   }
 
-  var text = "OBJECTIVE:<br>" + dataObj.objective + "<br><br>" 
-  + "PROCESS:<br>" + dataObj.process + "<br><br>"
-  + "DETAILS:<br>" + dataObj.details + "<br><br>";
+  objective.innerHTML = dataObj.objective;
+  process.innerHTML = dataObj.process;
+  details.innerHTML = dataObj.details;
 
-  if (dataObj.link != null) {
-   text += "PROJECT:<br><a href=" + dataObj.link + ">" + dataObj.link + "</a><br><br>"
-  };
+  modalBg.style.opacity = "1";
+  modalBg.style.zIndex = "5";
 
-  modElem.innerHTML = text;
+  var modalPosition = window.pageYOffset; //document.body.scrollTop;
+  var windowHeight = document.documentElement.clientHeight; //window.innerHeight;
+  var windowWidth = document.documentElement.clientWidth;
+  var modalHeight = modal.offsetHeight;
 
-  containerElem.style.visibility = "visible";
-  containerElem.style.opacity = "1";
-  containerElem.style.zIndex = "5";
-  minElem.addEventListener("click", hideModalEvent);
-
+  modal.style.top = ((windowHeight - modalHeight)/2 + modalPosition)+ "px";
 }
 
 
 function hideModalEvent(e) {
   var modalBg = document.getElementById("modal-bg");
   modalBg.style.opacity = "0";
-  modalBg.style.visibility = "hidden";
   modalBg.style.zIndex = "-1";
 }
 
@@ -410,12 +420,16 @@ window.onload = function() {
 
   renderPattern();
   createImgGraphic();
-  addEventListeners(document.getElementsByClassName("overlay"), addOverlayEvent, "mouseover");
-  addEventListeners(document.getElementsByClassName("proj"), populateModalEvent, "click");
-  document.getElementById("fade04").addEventListener("click", function(e){smoothScroll('projs')});
+
   (function() { 
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("preload") 
   })();
+
+  addEventListeners(document.getElementById("fade04"), function(e){smoothScroll('projs')}, "click");
+  addEventListeners(document.getElementsByClassName("overlay"), addOverlay, "mouseover");
+  addEventListeners(document.getElementsByClassName("overlay"), removeOverlay, "mouseout");
+  addEventListeners(document.getElementsByClassName("proj"), populateModalEvent, "click");
+  addEventListeners(document.getElementsByClassName("minimize"), hideModalEvent, "click");
 
 };
