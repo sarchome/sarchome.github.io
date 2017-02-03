@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 50.2 50.1" enable-background="new 0 0 50.2 50.1" xml:space="preserve">
-<g opacity="0.7">
-	<path opacity="0.8" fill="#CCFFFF" enable-background="new    " d="M5.1,50.1c24.3-1.4,45.1-22.8,45-50.1l0.1,50L5.1,50.1z"/>
-	<path opacity="0.8" fill="#E6E6E6" enable-background="new    " d="M0.3,50.1C0.2,23.8,21.2,1.5,50.1,0
-		C50.2,29.1,26.6,51.5,0.3,50.1z"/>
-	<path opacity="0.8" fill="#99CCCC" enable-background="new    " d="M0.3,50.1l-0.2-50l50-0.1C21.2,1.5,0.2,23.8,0.3,50.1z"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.2 50.1"><g opacity=".7"><path opacity=".8" fill="#CFF" d="M5.1 50.1c24.3-1.4 45.1-22.8 45-50.1l.1 50-45.1.1z"/><path opacity=".8" fill="#E6E6E6" d="M.3 50.1C.2 23.8 21.2 1.5 50.1 0 50.2 29.1 26.6 51.5.3 50.1z"/><path opacity=".8" fill="#9CC" d="M.3 50.1L.1.1l50-.1C21.2 1.5.2 23.8.3 50.1z"/></g></svg>
